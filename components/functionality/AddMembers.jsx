@@ -53,10 +53,10 @@ const AddMembers = () => {
 
   return (
     <div className='w-full h-full bg-white flex flex-col items-center bg-[rgba(255,255,255,.5)]'>
-        <h1 className='text-4xl login-text mt-[100px] max-w-[400px] text-center mx-auto'>Add a member to your padlet</h1>
-        <div className='min-w-[300px] w-[350px] mt-[80px] relative flex items-center'>
-            <input onChange={handleChange} className='w-full login-text outline-none rounded-xl text-xl py-1 px-4' type="text" placeholder="Filter member by email ..." />
-            {!email && <Search className='w-6 h-6 text-[#999] absolute right-2'/>}
+        <h1 className='text-2xl md:text-4xl login-text mt-[100px] max-w-[400px] text-center mx-auto'>Add a member to your padlet</h1>
+        <div className='min-w-[300px] w-[350px] mt-[50px] md:mt-[80px] relative flex items-center'>
+            <input onChange={handleChange} className='w-[85%] mx-auto md:w-full login-text outline-none rounded-xl text-base md:text-xl py-1 px-4' type="text" placeholder="Filter member by email ..." />
+            {!email && <Search className='w-6 h-6 text-[#999] absolute right-9 md:right-2'/>}
         </div>
         <div className='scrollbar-hide w-[300px] max-h-[300px] mt-[10px] md:w-[400px] flex flex-col items-center overflow-y-scroll'>
             {

@@ -66,11 +66,11 @@ const CreatePadlet = ({ socket, room }) => {
   const closeCreateModal = () => setShowCreateModal(false);
 
   return (
-  <form onSubmit={handleSubmit} action="https://formsubmit.co/danicolorado0306@gmail.com" method='POST' className='w-[500px] z-50 h-[700px] rounded-xl bg-white absolute bottom-[2%] left-[150%] flex flex-col items-center justify-center'>
+  <form onSubmit={handleSubmit} className='w-full md:w-[500px] z-50 h-[650px] rounded-xl top-[3vh] left-0 bg-white absolute md:bottom-[2%] md:left-[150%] flex flex-col items-center justify-center'>
     <button type="button" className='absolute z-10 right-3 top-3' onClick={closeCreateModal}>
       <Close className='!w-7 !h-7'/>
     </button>
-    <h2 className='text-black text-3xl font-semibold my-10 pl-2'>Create your idea</h2>
+    <h2 className='text-black text-xl md:text-3xl font-semibold my-6 pl-2'>Create your idea</h2>
     <div className='input-container'>
       <input onChange={handleChange} value={padlet.title} name='title' type="text" id='name' className='text-input' autoComplete='off' placeholder='Enter the title' required />
       <label className='label' htmlFor="name">Title</label>

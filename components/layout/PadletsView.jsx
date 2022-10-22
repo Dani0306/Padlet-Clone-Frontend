@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
 import IndividualPadlet from './IndividualPadlet'
 import { useAppContext } from '../../context/AppContext'
+import { Add } from '@mui/icons-material';
+import CreatePadlet from '../functionality/CreatePadlet';
+import singletonRouter from 'next/router'
 
 
 const PadletsView = ({ socket }) => {
 
-  const { padlets, setPadlets, user } = useAppContext();
+  const { padlets, setPadlets, user, setShowCreateModal, showCreateModal } = useAppContext();
 
   useEffect(() => {
     socket?.current?.on("add_padlet", (padlet) => {
@@ -23,6 +26,10 @@ const PadletsView = ({ socket }) => {
             {
               padlets.map((item, id) => <IndividualPadlet socket={socket} key={id} padlet={item} />)
             }
+            <div onClick={() => setShowCreateModal(true)} className='w-[50px] h-[50px] bg-black rounded-full flex items-center justify-center absolute right-3 top-[84vh]'>
+              <Add className='w-7 h-7 text-white'/>
+            </div>
+            {showCreateModal && <CreatePadlet socket={socket} room={singletonRouter.query.room}/>}
     </div>
   )
 }

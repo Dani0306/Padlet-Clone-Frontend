@@ -33,18 +33,18 @@ const CreateRoomComponent = () => {
         <p className='text-xl max-w-[400px] text-center my-16 mb-8 login-text'>
           Create a padlet to share all your ideas with your team.
         </p>
-        <h2 className='login-text text-3xl font-bold my-4'>{ padletToCreate.code ? "Here's you padlet" : "Create"}</h2>
+        <h2 className='login-text text-2xl md:text-3xl font-bold mt-4'>{ padletToCreate.code ? "Here's you padlet" : "Create"}</h2>
         <div className='w-[400px] my-4 h-max flex flex-col items-center justify-centers relative'>
           {
             !padletToCreate.code && 
             <form className='w-full h-max flex flex-col items-center justify-between' onSubmit={handleSubmit}>
-              <input name="name" onChange={handleChange} type="text" className='px-4 mt-4 mb-8 w-[80%] py-1 text-xl login-text border rounded-full outline-none' placeholder="Enter the padlet name..."/>
+              <input name="name" onChange={handleChange} type="text" className='px-4 mt-4 mb-8 w-[70%] md:w-[80%] py-1 text-base md:text-xl login-text border rounded-full outline-none' placeholder="Enter the padlet name..."/>
               <select name="privacy" className='w-[120px] rounded-xl px-2 py-1 outline-none'>
                 <option value>Privacy</option>
                 <option value="public">Public</option>
                 <option value="private">Private</option>
               </select>
-              <button type="submit" className='w-[150px] border border-black flex items-center justify-center h-[40px] rounded-xl my-8 bg-black text-white font-normal text-xl'>Create</button>
+              <button type="submit" className='w-[150px] border border-black flex items-center justify-center h-[30px] md:h-[40px] rounded-xl my-8 bg-black text-white font-normal text-base md:text-xl'>Create</button>
             </form>
           }
           {
