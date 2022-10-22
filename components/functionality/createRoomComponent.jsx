@@ -65,4 +65,4 @@ const CreateRoomComponent = () => {
   )
 }
 
-export default createRoomComponent
+export default CreateRoomComponent

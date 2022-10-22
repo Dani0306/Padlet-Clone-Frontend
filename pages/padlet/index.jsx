@@ -11,7 +11,7 @@ const PadletHome = ({ serverUser, padlets }) => {
 
   useEffect(() => {
     setUser(serverUser)
-  }, [])
+  }, [serverUser])
   
   return (
     <div className={`place-items-center place-content-start w-full h-screen ${padlets.length > 0 ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 p-4 lg:p-8 gap-6" : "flex items-center justify-center"} `}> 

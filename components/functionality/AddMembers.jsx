@@ -45,8 +45,6 @@ const AddMembers = () => {
         
     }
 
-    const copyText = () => {
-    }
 
     useEffect(() => {
         if(debounceValue) getUsers()

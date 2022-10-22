@@ -2,6 +2,7 @@ import MainSectionDesign from '../components/layout/MainSectionDesign'
 import { useEffect } from 'react';
 import { useAppContext } from '../context/AppContext'
 import { jwtVerify } from 'jose'
+import { serialize } from 'cookie';
 
 export default function Home ({ serverUser }){
 
@@ -9,7 +10,7 @@ export default function Home ({ serverUser }){
 
   useEffect(() => {
     setUser(serverUser)
-  }, [])
+  }, [serialize])
 
   return (
     <div className="w-full min-h-[92vh] max-h-max">

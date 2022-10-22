@@ -21,7 +21,7 @@ const Room = ({ user, room, padlets }) => {
       setUser(user)
       setPadlets([...padlets])
     }
-  }, [])
+  }, [user, room, padlets])
 
 
   return (
