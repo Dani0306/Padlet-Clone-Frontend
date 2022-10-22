@@ -1,14 +1,12 @@
 import { Facebook } from '@mui/icons-material'
 import { signIn } from '../../firebase/auth'
 import axios from 'axios'
-import { useAppContext } from '../../context/AppContext'
 import { useState } from 'react'
-import { useRouter } from 'next/router'
+import singletonRouter from 'next/router'
 
 const Register = () => {
 
   const [err, setErr] =  useState("");
-  const router = useRouter();
 
   const registerHandler = async () => {
     const { user: { email, photoURL, displayName } } = await signIn();
@@ -21,7 +19,7 @@ const Register = () => {
 
     if(response.status === 200) {
       localStorage.setItem("user", JSON.stringify(user));
-      window.location.href = "http://localhost:3000/padlet";
+      singletonRouter.push("/padlets")
     }
     else setErr(response.data.error)
   
