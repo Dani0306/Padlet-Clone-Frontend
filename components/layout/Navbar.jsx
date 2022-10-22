@@ -44,7 +44,7 @@ const Navbar = () => {
                   <span onClick={() => handleOpenModal(AddMembers)}>Add members</span>
                   <Add className='!w-6 !h-6 text-white mx-2'/>
                 </> : <>
-                  <span onClick={() => handleOpenModal(createRoomComponent)}>Create Padlet Room</span>
+                  <span onClick={() => handleOpenModal(CreateRoomComponent)}>Create Padlet Room</span>
                   <Add className='!w-6 !h-6 text-white mx-2'/>
                 </>
               }
