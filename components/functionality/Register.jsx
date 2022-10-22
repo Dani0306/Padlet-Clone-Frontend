@@ -19,7 +19,7 @@ const Register = () => {
 
     if(response.status === 200) {
       localStorage.setItem("user", JSON.stringify(user));
-      singletonRouter.push("/padlets")
+      singletonRouter.push("/padlet")
     }
     else setErr(response.data.error)
   
