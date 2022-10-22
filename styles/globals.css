@@ -1,26 +1,268 @@
-html,
-body {
-  padding: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .profile-list-item {
+    @apply w-[85%] border-b border-white h-max px-2 text-white font-normal py-3 flex items-center justify-between;
+  }
+}
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+  padding: 0;
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body {
+  background: rgb(17,43,64);
+  background: linear-gradient(90deg, rgba(17,43,64,0.9360119047619048) 0%, rgba(132,3,140,1) 100%, rgba(0,19,34,0) 100%);
+}
+
+
+/* NAVBAR STYLES */
+
+.logo {
+  font-family: 'Victor Mono';
+  font-size: 30px;
+}
+
+/* MAIN SECTION STYLES */
+
+.main-container {
+  background: rgb(17,43,64);
+  background: linear-gradient(90deg, rgba(17,43,64,0.9360119047619048) 0%, rgba(132,3,140,1) 100%, rgba(0,19,34,0) 100%);
+}
+
+
+
+.wrapper .static-text{
+  color: #fff;
+  font-family: 'Victor Mono';
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.wrapper .dynamic-texts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;  
+  overflow: hidden;
+}
+
+
+.dynamic-texts li {
+  list-style: none;
+  font-size: 30px;
+  font-weight: 500;
+  color: #D6C81F;
+  position: relative;
+  top: 0;
+  animation: slide 6s steps(4) infinite;
+
+}
+
+@media only screen and (min-width: 900px){
+  .dynamic-texts li {
+    font-size: 50px;
   }
-  body {
-    color: white;
-    background: black;
+
+  .wrapper .static-text {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .responsive-navbar {
+    background: rgb(17,43,64);
+    background: linear-gradient(90deg, rgba(17,43,64,0.9360119047619048) 0%, rgba(30,69,88,1) 0%, rgba(46,30,88,1) 100%, rgba(0,19,34,0) 100%);
+  }
+}
+
+
+@keyframes slide {
+  100% {
+    top: -360px;
+
+  }
+}
+
+.dynamic-texts li span {
+  position: relative;
+  font-family: 'Victor Mono'
+}
+
+.dynamic-texts li span::after {
+  left: 0;
+  top: 0;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(17,43,64);
+  background: rgb(99, 25, 120);
+  border-left: 2px solid #D6C81F;
+  animation: typing 1.5s steps(10) infinite;
+}
+
+@keyframes typing {
+  100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
+
+/* FORM STYLES */
+
+.title { 
+  font-family: "Victor Mono"
+}
+
+.input-container {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  margin: 15px 0;
+}
+
+.label {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  transition: all .2s;
+  padding: 0 2px;
+  z-index: 1;
+  color: #b3b3b3;
+}
+
+.text-input {
+  padding: .8rem;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #2f2c45;
+  background: #eee;
+  border-radius: 5px;
+  font-size: 18px;
+  outline: none;
+  transition: all .3s;
+  color: #000;
+}
+
+.label::before {
+  content: "";
+  height: 5px;
+  background: #eee;
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  width: 100%;
+  z-index: -1;
+
+}
+
+.text-input:focus{
+  border: 2px solid #CFD629;
+}
+
+.text-input:focus + .label, .filled {
+  top: -10px;
+  color: #000;
+  font-size: 14px;
+}
+
+.text-input::placeholder {
+  color: #aaa;
+  font-size: 16px;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.text-input:focus::placeholder {
+  opacity: 1;
+}
+
+
+
+
+/* MODAL SECTION STYLES */
+
+
+.modalView{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/*w-4/5 lg:w-3/5 h-[80%] lg:h-[55%] bg-white flex flex-col items-center justify-center*/
+@media only screen and (min-width: 900px){
+  .modalView {
+    width: 65%;
+    height: 65%;
+  }
+}
+
+.modalContainer {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.fadeOut{
+  animation: fadeOut .3s ease;
+}
+
+
+@keyframes fadeIn{
+  from {
+      transform: scale(0)
+  }
+  to{
+      transform: scale(1)
+  }
+}
+
+
+@keyframes fadeOut{
+  from {
+      transform: scale(1)
+  }
+  to{
+      transform: scale(0)
+  }
+}
+
+.login-text {
+  font-family: 'Victor mono'
+}
+
+/* MEMBER ADDED */
+
+.member-added {
+  position: absolute;
+  bottom: -100px;
+  left: 30px;
+  width: 185px;
+  height: 50px;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  animation: added .6s forwards;
+}
+
+
+@keyframes added {
+  from {
+      bottom: -100%;
+      opacity: 0;
+  } 
+  to {
+      bottom: 40px;
+      opacity: 1;
   }
 }
