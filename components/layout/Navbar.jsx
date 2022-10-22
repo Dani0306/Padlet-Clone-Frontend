@@ -5,10 +5,9 @@ import Login from '../functionality/Login'
 import Register from '../functionality/Register'
 import Image from 'next/image'
 import ProfileModal from '../functionality/ProfileModal'
-import createRoomComponent from '../functionality/createRoomComponent'
+import CreateRoomComponent from '../functionality/createRoomComponent'
 import JoinPadletComponent from '../functionality/JoinPadletComponent'
 import singletonRouter from 'next/router'
-import { useEffect } from 'react'
 import AddMembers from '../functionality/AddMembers'
 
 const Navbar = () => {

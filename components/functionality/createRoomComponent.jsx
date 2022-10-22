@@ -5,7 +5,7 @@ import axios from 'axios'
 import { host } from '../../variables'
 import singletonRouter from "next/router";
 
-const createRoomComponent = () => {
+const CreateRoomComponent = () => {
 
   const [padletToCreate, setPadletToCreate] = useState({
     code: "",
