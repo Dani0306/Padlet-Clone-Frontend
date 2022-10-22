@@ -66,7 +66,7 @@ const CreatePadlet = ({ socket, room }) => {
   const closeCreateModal = () => setShowCreateModal(false);
 
   return (
-  <form onSubmit={handleSubmit} className='w-full md:w-[500px] z-50 h-[650px] rounded-xl top-[3vh] left-0 bg-white absolute md:bottom-[2%] md:left-[150%] flex flex-col items-center justify-center'>
+  <form onSubmit={handleSubmit} className='w-[90%] md:w-[500px] z-50 h-[650px] rounded-xl top-[3vh] bg-white absolute md:bottom-[2%] md:left-[150%] flex flex-col items-center justify-center'>
     <button type="button" className='absolute z-10 right-3 top-3' onClick={closeCreateModal}>
       <Close className='!w-7 !h-7'/>
     </button>

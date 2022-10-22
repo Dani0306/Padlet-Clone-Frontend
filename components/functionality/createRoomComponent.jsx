@@ -30,7 +30,7 @@ const CreateRoomComponent = () => {
 
   return (
     <div className='w-full h-full flex items-center flex-col bg-[rgba(255,255,255,.5)]'>
-        <p className='text-xl max-w-[400px] text-center my-16 mb-8 login-text'>
+        <p className='texxt-base md:text-xl max-w-[90%] text-center my-16 mb-8 login-text'>
           Create a padlet to share all your ideas with your team.
         </p>
         <h2 className='login-text text-2xl md:text-3xl font-bold mt-4'>{ padletToCreate.code ? "Here's you padlet" : "Create"}</h2>
