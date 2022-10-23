@@ -10,10 +10,11 @@ const IndividualPadlet = ({ padlet, socket }) => {
   
   const [showModalOptions, setshowModalOptions] = useState(false);
   const { setPadlets, padlets } = useAppContext();
+  const [showName, setShowName] = useState(false);
 
   const handleShowModalOptions = () => setshowModalOptions(!showModalOptions);
 
-
+  
   const deletePadlet = async () => {
     const response = await axios.post(host + "/padlet/remove", { code: singletonRouter.query.room, id: padlet.id  })
     if(response.status === 200) {
@@ -24,7 +25,14 @@ const IndividualPadlet = ({ padlet, socket }) => {
 
   
   return (
-      <div className='w-[350px] rounded-xl relative px-4 h-max md:max-h-[500px] flex flex-col bg-white py-2'>
+      <div className='relative w-[350px] rounded-xl px-4 h-max md:max-h-[500px] flex flex-col bg-white py-2'>
+        <div onMouseOver={() => setShowName(true)} onMouseLeave={() => setShowName(false)} className='w-[30px] h-[30px] flex items-center justify-center absolute top-4 left-4'>
+          <Image src={padlet.owner.profile} alt="Profile" className='rounded-full' width={30} height={30} objectFit="cover" />
+        </div>
+        {showName && 
+        <div className='hover-name'>
+          <span>{padlet.owner.email}</span>
+        </div>}
         <div className='w-full h-[25%] flex padlets-center justify-center py-4'>
             <h2 className='text-center text-2xl font-semibold'>{padlet.title}</h2>
         </div>
