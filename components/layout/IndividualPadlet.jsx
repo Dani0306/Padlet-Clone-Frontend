@@ -40,7 +40,7 @@ const IndividualPadlet = ({ padlet, socket }) => {
           <MoreVert className='w-6 h-6'/>
         </button>
         {showModalOptions && 
-          <ul className='absolute bottom-[-65%] py-5 pb-6 pr-2 bg-black rounded-xl right-[-20%] flex flex-col items-center w-[200px] h-max'>
+          <ul className='absolute bottom-[-70%] py-5 pb-6 pr-2 bg-black rounded-xl right-0 md:right-[-20%] flex flex-col items-center w-[200px] h-max'>
             <li className='text-white after:w-[80%] flex-col after:border-t after:border-white w-full text-base h-max py-2 flex items-end pr-3'>
                <div className='w-full h-full flex items-center py-1'>
                 <OpenInNew className='w-5 h-5 mx-2'/> <span>Open post</span>
